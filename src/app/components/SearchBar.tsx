@@ -25,8 +25,15 @@ export default function SearchBar() {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white dark:bg-gray-800 dark:border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
-            placeholder="Search GitHub username"
+className="w-full pl-10 pr-4 py-2 rounded-lg
+           bg-gray-50 dark:bg-gray-800
+           [color:rgb(17,24,39)] dark:[color:white]
+           text-gray-900 dark:text-white
+           placeholder-gray-500 dark:placeholder-gray-400
+           border border-gray-300 dark:border-gray-600
+           focus:outline-none focus:ring-2 focus:ring-blue-500
+           focus:border-transparent
+           [-webkit-text-fill-color:inherit]"            placeholder="Search GitHub username"
             required
           />
         </div>
