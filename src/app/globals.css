@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom dark blue color */
+.dark .bg-dark-blue {
+  background-color: #1a202c; /* Very dark blue color */
+}
+
 /* Light mode styles */
 .bg-light {
   background-color: #ffffff;
