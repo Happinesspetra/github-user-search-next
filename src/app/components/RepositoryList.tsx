@@ -10,6 +10,12 @@ interface RepositoryListProps {
 
 export default function RepositoryList({ repositories }: RepositoryListProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   const reposPerPage = 6;
   const indexOfLastRepo = currentPage * reposPerPage;
   const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
@@ -17,8 +23,14 @@ export default function RepositoryList({ repositories }: RepositoryListProps) {
   const totalPages = Math.ceil(repositories.length / reposPerPage);
 
   return (
-    <div className="mt-8">
+    <div className={`mt-8 ${isDarkMode ? 'dark' : ''}`}>
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Repositories</h2>
+      <button
+        onClick={toggleTheme}
+        className="mb-4 px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+      >
+        Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
+      </button>
       <div className="grid gap-4 md:grid-cols-2">
         {currentRepos.map((repo) => (
           <div
