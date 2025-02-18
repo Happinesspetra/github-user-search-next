@@ -12,13 +12,12 @@ export default function ErrorMessage({ message }: ErrorMessageProps) {
           <h3 className="text-sm font-medium">Error!!!</h3>
           <div className="mt-2 text-sm">{message}</div>
         </div>
-        <br>
         <Link href="/">
-          <button>
-          <a className="mt-4 text-blue-600 dark:text-blue-400 hover:underline">
-            Back
+          <a className="mt-4">
+            <button className="text-blue-600 dark:text-blue-400 hover:underline">
+              Back
+            </button>
           </a>
-          </button>
         </Link>
       </div>
     </div>
