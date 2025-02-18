@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import Image from 'next/image';
-import { FaMapMarkerAlt, FaLink, FaGithub } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaGithub } from 'react-icons/fa';
 import type { GitHubUser } from '../types';
 
 interface UserProfileProps {
@@ -7,8 +8,27 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ user }: UserProfileProps) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  };
+
   return (
-    <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+    <div className={`bg-white dark:bg-dark-blue shadow rounded-lg p-6 ${isDarkMode ? 'dark' : ''}`}>
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={toggleTheme}
+          className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+        >
+          Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
+        </button>
+      </div>
       <div className="flex flex-col sm:flex-row items-center">
         <div className="flex-shrink-0 mb-4 sm:mb-0">
           <div className="relative w-32 h-32">
