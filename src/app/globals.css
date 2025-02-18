@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* src/styles/globals.css */
+
+/* Light mode styles */
+.bg-light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+.bg-dark {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+/* Additional dark mode styles for elements */
+.dark .bg-light {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.dark .text-gray-900 {
+  color: #ffffff;
+}
+
+.dark .bg-gray-200 {
+  background-color: #4a5568;
+}
+
+.dark .text-gray-600 {
+  color: #a0aec0;
+}
+
+.dark .text-gray-500 {
+  color: #cbd5e0;
+}
+
+.dark .bg-blue-600 {
+  background-color: #2b6cb0;
+}
+
+.dark .hover\:text-blue-800:hover {
+  color: #63b3ed;
+}
