@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* src/styles/globals.css */
-
 /* Light mode styles */
 .bg-light {
   background-color: #ffffff;
